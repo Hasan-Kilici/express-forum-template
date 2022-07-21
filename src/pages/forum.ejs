@@ -1,0 +1,32 @@
+<%- include('../partials/head') %>
+<%- include('../partials/navbar') %>
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-4 text-center" style="background:#eee">
+<div class="container">
+<img class="m-t" style="border-radius:50%;border:1px solid black;width:50%" src="/uploads/<%= forum.userPP %>"><br>
+<%= forum.user %>
+</div>
+</div>
+<div class="col-md-8 forum">
+<h4 class="m-t"><%= forum.title %></h4>
+<label><%= forum.description %></label>
+<h5>Kod</h5>
+<pre><%= forum.code %></pre>
+</div>
+</div>
+<% comment.forEach( comment => { %>
+<div class="row">
+<div class="col-md-4 text-center" style="background:#eee">
+<div class="container">
+<img class="m-t" style="border-radius:50%;border:1px solid black;width:50%" src="/uploads/<%= comment.userPP %>"><br>
+<%= comment.title %>
+</div>
+</div>
+<div class="col-md-8 comment">
+<label><%= comment.description %></label>
+
+</div>
+</div>
+<% }) %>
+</div>
