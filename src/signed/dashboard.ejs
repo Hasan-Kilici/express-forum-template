@@ -1,0 +1,42 @@
+<%- include('../partials/head') %>
+<%- include('../partials/usernavbar') %>
+<div class="container">
+<form method="POST" action="/new/forum/<%= user._id %>">
+<div class="card m-t">
+<div class="card-body">
+<h4>Tartışma Başlat</h4>
+<label class="m-t" for="title">Tartışma Konusu</label>
+<input type="text" class="form-control" id="title" name="title" required>
+<label for="description">Açıklama</label>
+<input type="text" class="form-control" id="description" name="description" required>
+<label>Hatalı Olan Kod </label>
+<textarea class="form-control col-12" id="code" name="code" required></textarea>
+</div>
+<div class="card-footer">
+<button class="btn btn-dark" type="submit">Gönder</button>  
+</div>
+</div> 
+</form>
+  
+<% forum.forEach( forum => { %>
+<div class="card">
+<div class="card-header">
+<h5><%= forum.title %></h5>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-md-9">
+<label><%= forum.user  %> : <%= forum.description %></label>
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="row">
+<form method="POST" class="col-md-2" action="/forum/remove/<%= forum._id %>">
+<button type="submit" class="btn btn-danger col-12">Sil</button>
+</form>
+</div>
+</div>
+</div>
+<% }) %>
+</div>
