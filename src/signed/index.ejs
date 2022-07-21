@@ -1,0 +1,35 @@
+<%- include('../partials/head') %>
+<%- include('../partials/usernavbar') %>
+<div class="container-fluid m-t">
+ <div class="row">
+  <div class="col-md-12">
+  <div class="container">
+  <h4>Son Sorulan Sorular</h4>
+   <% forum.forEach( forum => { %>
+<div class="card col-md-12">
+<div class="card-header">
+  <a class="text-dark" href="/forum/<%= forum._id %>"<h5><%= forum.title %></h5></a>
+<% if(forum.solved != "false") { %>
+<label class="text-success">Çözüldü</label>
+<% } %>
+</div>
+<div class="card-body">
+<div class="row">
+<div class="col-md-10">
+<label><%= forum.user  %> : <%= forum.description %></label>
+</div>
+</div>
+</div>
+<div class="card-footer">
+<div class="row">
+<div class="col-4 text-secondary">
+<label><i class="far fa-comment-alt"></i> <%= forum.comments %>
+</div>
+<div class="col-4 text-secondary">
+</div>
+</div>
+</div>
+</div>
+<% }) %> 
+  </div>  
+  </div>
