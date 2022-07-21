@@ -1,1 +1,4 @@
 Buraya Fotoğraflar gelecek
+Kullanıcıların Hesap oluşturduğunda gelecek profil fotoğrafını dataya 
+uploaded_file-1658102826205-26150710.png
+şeklinde yükleyin
